@@ -32,21 +32,21 @@ def parse():
 )
     # input('OK: ')
     time.sleep(2)
-    # Кликаем на объект
+   
     element.click()
     element = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="address-button-add"]'))
 )
     
     time.sleep(2)
-    # Кликаем на объект
+  
     element.click()
     element = WebDriverWait(driver, 20).until(
     EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-testid="address-input-reset"]'))
 )
     
     time.sleep(2)
-    # Кликаем на объект
+    
     element.click()
     input_text = "улица Геворка Джаукяна, 53"
     try:
@@ -73,10 +73,10 @@ def parse():
     time.sleep(2)
     scroll_height = driver.execute_script("return document.body.scrollHeight")
 
-    # Шаг скроллинга
+   
     scroll_step = 1500
 
-    # Цикл скроллинга страницы
+   
     for i in range(0, scroll_height, scroll_step):
         # driver.execute_script(f"window.scrollTo(0, {i})")
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
@@ -94,7 +94,7 @@ def parse():
     
     # print(arr_names)
 
-    # перебор товаров в рестике
+ 
     for idx, href in enumerate(arr):
         c = 2    
         driver.get(href)
@@ -115,10 +115,10 @@ def parse():
         
         scroll_height = driver.execute_script("return document.body.scrollHeight")
 
-        # Шаг скроллинга
+     
         scroll_step = 800
         arr_pos = []
-        # Цикл скроллинга страницы
+    
         for i in range(0, scroll_height, scroll_step):
             driver.execute_script(f"window.scrollTo(0, {i})")
             # driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
