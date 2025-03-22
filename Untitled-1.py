@@ -49,7 +49,6 @@ for p in range(10):
         
         
 
-        # Eбанный состав
         # composition_text = soup.find('h3', string='Анализ состава:').find_previous('p').get_text(strip=True)
         try:
             composition_text = soup.find_all('div', class_='rc-product-detail')[1].find('p').get_text(strip=True)
@@ -72,7 +71,6 @@ for p in range(10):
                 break
         # energy_value = soup.find('h3', text='Энергетическая ценность:').find_next('p').get_text(strip=True)
                 
-        # Значение из не менее ебанный таблички
         focus = soup.find('span', string='Направленность').find_next('div', class_='b-characteristics-tab__characteristics-value').get_text(strip=True)
         brand = soup.find('span', string='Бренд').find_next('div', class_='b-characteristics-tab__characteristics-value').get_text(strip=True)
         packed = soup.find('span', string='Упаковано').find_next('div', class_='b-characteristics-tab__characteristics-value').get_text(strip=True)
@@ -83,7 +81,6 @@ for p in range(10):
         price = price_element.text if price_element else None
 
 
-        # Подготовка к заносу в экзель(хуевая)
         data = {
             "Название": [title],
             "Направленность": [focus],
@@ -112,5 +109,4 @@ for p in range(10):
         sheet[f'I{count}'].value = price
         wb.save(file)
         count =count+1
-        # Запись в эксель, но тут не доебаться
         # df.to_excel("output_data.xlsx", index=False)
