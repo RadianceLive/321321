@@ -1,0 +1,8 @@
+pandas
+requests
+beautifulsoup4
+openpyxl
+fake-headers
+selenium
+undetected-chromedriver
+chromedriver-autoinstaller
